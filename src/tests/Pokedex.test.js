@@ -35,6 +35,10 @@ describe('Teste do componente Pokedex', () => {
       expect(type).toHaveLength(2);
       expect(buttonAll).toBeInTheDocument();
     });
+    userEvent.click(buttons[1]);
+    screen.getByText(/charmander/i);
+    userEvent.click(buttonAll);
+    screen.getByText(/pikachu/i);
   });
 
   it('Teste se a Pokédex contém um botão para resetar o filtro', () => {
